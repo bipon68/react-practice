@@ -1,0 +1,11 @@
+{
+  "name": "react-practice",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/bipon68/react-practice.git",
+  "author": "bipon68 <bipon68@users.noreply.github.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "parcel-bundler": "^1.12.4"
+  }
+}
