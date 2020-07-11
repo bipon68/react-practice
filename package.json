@@ -5,7 +5,14 @@
   "repository": "https://github.com/bipon68/react-practice.git",
   "author": "bipon68 <bipon68@users.noreply.github.com>",
   "license": "MIT",
+  "scripts": {
+    "start": "parcel index.html"
+  },
   "devDependencies": {
     "parcel-bundler": "^1.12.4"
+  },
+  "dependencies": {
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
   }
 }

@@ -1,6 +1,11 @@
 ## Step by Step frontend app creation
 - `yarn init -y` for custom create
 - `yarn add parcel-bundler -D`
+- `yarn add react react-dom`
+- ` "scripts": {
+    "start": "parcel index.html"
+  }`
+  - `yarn start`
 - or `npm i -g create-react-app`
 - Step 1 : `create-react-app react-practice`
 - Step 2 : `create css folder and added style.css file`

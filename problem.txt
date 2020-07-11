@@ -1,5 +1,5 @@
-1. Dependency issue
-2. Global variable
-3. Creating server
-4. Transpiler issue (use babel)
-5. ES6 Module - gulp, webpack, parcel
+1. Dependency issue - solved
+2. Global variable - solved
+3. Creating server - solved
+4. Transpiler issue (use babel) - solved
+5. ES6 Module - gulp, webpack, parcel - solved
