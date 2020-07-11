@@ -1,8 +1,9 @@
 console.log('React : ', React)
 console.log('ReactDOM : ', ReactDOM);
 
-// const anotherElement = React.createElement('div', {class: 'container', element})
-
 const element = React.createElement('h2', {id: 'hello'}, 'Hello World');
-ReactDOM.render(element, document.getElementById('root'))
+
+const anotherElement = React.createElement('div', {className: 'container'}, element)
+
+ReactDOM.render(anotherElement, document.getElementById('root'))
 console.log(element)
