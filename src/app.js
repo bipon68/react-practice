@@ -1,4 +1,4 @@
-import React from "react";
+import React, {Component} from "react";
 import ReactDOM from "react-dom";
 
 console.log("React : ", React);
@@ -12,11 +12,27 @@ function canVote(){
   }
 }
 
-const Greeting = () => {
-  return(
-    <h3>Welcome Bipon! into React World. </h3>
-  )
+
+class Greeting extends Component {
+  constructor(){
+    super()
+  }
+  render() {
+    return (
+      <div>
+          <h3>Greeting Component</h3>
+      </div>
+    )
+  }
 }
+export default Greeting;
+
+
+// const Greeting = () => {
+//   return(
+//     <h3>Welcome Bipon! into React World. </h3>
+//   )
+// }
 
 const element = React.createElement(
   "div",
