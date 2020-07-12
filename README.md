@@ -2,9 +2,15 @@
 - `yarn init -y` for custom create
 - `yarn add parcel-bundler -D`
 - `yarn add react react-dom`
+- `yarn add prettier`
+- `command on terminal yarn format`
 - ` "scripts": {
-    "start": "parcel index.html"
+    "start": "parcel index.html",
+    "format": "prettier --write app.js" 
+    "format": "prettier --write \"src/**/*.{js, jsx}\"
   }`
+  - `move script file into src folder - "format": "prettier --write \"src/app.js\""`
+  - `"format": "prettier --write \"src/**/*.{js, jsx}\""`
   - `yarn start`
 - or `npm i -g create-react-app`
 - Step 1 : `create-react-app react-practice`
