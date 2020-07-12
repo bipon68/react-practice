@@ -11,11 +11,23 @@
 - add package.json file into script `"lint": "eslint \"src/**/*.{js,jsx}\""`
 - check eslint `yarn lint`
 - for warning remove for eslint into `.eslintrc.json` file `
+"extends": [
+        "eslint:recommended",
+        "plugin: import/errors",
+        "plugin:react/recommended"
+    ],
+"plugins": [
+        "react", "import", "jsx-a11y"
+    ],
 "settings": {
         "react": {
             "version": "detect"
         }
+
 `
+- `yarn add eslint-plugin-jsx-a11y -D` [eslint-plugin-jsx-a11y](https://www.npmjs.com/package/eslint-plugin-jsx-a11y)
+- `yarn add eslint-plugin-import -D` [eslint-plugin-import](https://www.npmjs.com/package/eslint-plugin-import)
+- `yarn add eslint-config-prettier - D` [eslint-config-prettier](https://www.npmjs.com/package/eslint-config-prettier)
 - ` "scripts": {
     "start": "parcel index.html",
     "format": "prettier --write app.js" 

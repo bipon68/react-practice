@@ -6,7 +6,11 @@
     },
     "extends": [
         "eslint:recommended",
-        "plugin:react/recommended"
+        "plugin:import/errors",
+        "plugin:jsx-a11y:recommended",
+        "plugin:react/recommended",
+        "prettier",
+        "prettier/react"
     ],
     "parserOptions": {
         "ecmaFeatures": {
@@ -16,7 +20,7 @@
         "sourceType": "module"
     },
     "plugins": [
-        "react"
+        "react", "import", "jsx-a11y"
     ],
     "rules": {
     },
