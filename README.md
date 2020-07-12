@@ -4,6 +4,18 @@
 - `yarn add react react-dom`
 - `yarn add prettier`
 - `command on terminal yarn format`
+- `yarn add eslint -D`
+- `yarn eslint`
+- `yarn eslint --init` choose `To check syntax and find problems` then `Javascript modules (import/export)` then `React` `browser node` `JSON` `eslint-plugin-react@latest` install yes
+- if problem to install manually then run command into terminal `yarn add eslint-plugin-react -D`
+- add package.json file into script `"lint": "eslint \"src/**/*.{js,jsx}\""`
+- check eslint `yarn lint`
+- for warning remove for eslint into `.eslintrc.json` file `
+"settings": {
+        "react": {
+            "version": "detect"
+        }
+`
 - ` "scripts": {
     "start": "parcel index.html",
     "format": "prettier --write app.js" 
