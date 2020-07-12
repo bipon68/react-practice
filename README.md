@@ -21,7 +21,8 @@
 - if problem to install manually then run command into terminal `yarn add eslint-plugin-react -D`
 - add package.json file into script `"lint": "eslint \"src/**/*.{js,jsx}\""`
 - check eslint `yarn lint`
-- for warning remove for eslint into `.eslintrc.json` file `"extends": [
+- for warning remove for eslint into `.eslintrc.json` file `
+"extends": [
         "eslint:recommended",
         "plugin: import/errors",
         "plugin:react/recommended"
@@ -33,13 +34,12 @@
         "react": {
             "version": "detect"
         }
-
 `
 - `yarn add eslint-plugin-jsx-a11y -D`  (https://www.npmjs.com/package/eslint-plugin-jsx-a11y)
 - `yarn add eslint-plugin-import -D` (https://www.npmjs.com/package/eslint-plugin-import)
 - `yarn add eslint-config-prettier - D` (https://www.npmjs.com/package/eslint-config-prettier)
 
-
+### Project create using only command
 - or `npm i -g create-react-app`
 - Step 1 : `create-react-app react-practice`
 - Step 2 : `create css folder and added style.css file`
