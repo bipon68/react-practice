@@ -4,14 +4,24 @@
 - `yarn add react react-dom`
 - `yarn add prettier`
 - `command on terminal yarn format`
+- ` "scripts": {
+    "start": "parcel index.html",
+    "format": "prettier --write app.js" 
+    "format": "prettier --write \"src/**/*.{js, jsx}\"
+  }`
+- move script file into src folder - `"format": "prettier --write \"src/app.js\""`
+- `"format": "prettier --write \"src/**/*.{js, jsx}\""`
+- `yarn start`
+
+### Eslint configure 
+
 - `yarn add eslint -D`
 - `yarn eslint`
 - `yarn eslint --init` choose `To check syntax and find problems` then `Javascript modules (import/export)` then `React` `browser node` `JSON` `eslint-plugin-react@latest` install yes
 - if problem to install manually then run command into terminal `yarn add eslint-plugin-react -D`
 - add package.json file into script `"lint": "eslint \"src/**/*.{js,jsx}\""`
 - check eslint `yarn lint`
-- for warning remove for eslint into `.eslintrc.json` file `
-"extends": [
+- for warning remove for eslint into `.eslintrc.json` file `"extends": [
         "eslint:recommended",
         "plugin: import/errors",
         "plugin:react/recommended"
@@ -25,17 +35,11 @@
         }
 
 `
-- `yarn add eslint-plugin-jsx-a11y -D` [eslint-plugin-jsx-a11y](https://www.npmjs.com/package/eslint-plugin-jsx-a11y)
-- `yarn add eslint-plugin-import -D` [eslint-plugin-import](https://www.npmjs.com/package/eslint-plugin-import)
-- `yarn add eslint-config-prettier - D` [eslint-config-prettier](https://www.npmjs.com/package/eslint-config-prettier)
-- ` "scripts": {
-    "start": "parcel index.html",
-    "format": "prettier --write app.js" 
-    "format": "prettier --write \"src/**/*.{js, jsx}\"
-  }`
-  - `move script file into src folder - "format": "prettier --write \"src/app.js\""`
-  - `"format": "prettier --write \"src/**/*.{js, jsx}\""`
-  - `yarn start`
+- `yarn add eslint-plugin-jsx-a11y -D`  (https://www.npmjs.com/package/eslint-plugin-jsx-a11y)
+- `yarn add eslint-plugin-import -D` (https://www.npmjs.com/package/eslint-plugin-import)
+- `yarn add eslint-config-prettier - D` (https://www.npmjs.com/package/eslint-config-prettier)
+
+
 - or `npm i -g create-react-app`
 - Step 1 : `create-react-app react-practice`
 - Step 2 : `create css folder and added style.css file`
