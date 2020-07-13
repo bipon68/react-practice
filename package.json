@@ -6,7 +6,7 @@
   "author": "bipon68 <bipon68@users.noreply.github.com>",
   "license": "MIT",
   "scripts": {
-    "start": "parcel index.html",
+    "start": "parcel index.html --open",
     "format": "prettier --write \"src/**/*.{js,jsx}\"",
     "lint": "eslint \"src/**/*.{js,jsx}\""
   },
