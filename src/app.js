@@ -1,5 +1,6 @@
 import React, {Component} from "react";
 import ReactDOM from "react-dom";
+import Example from './Example';
 
 console.log("React : ", React);
 console.log("ReactDOM : ", ReactDOM);
@@ -12,20 +13,18 @@ function canVote(){
   }
 }
 
-
-class Greeting extends Component {
-  constructor(){
-    super()
-  }
+class App extends Component {
   render() {
     return (
       <div>
-          <h3>Greeting Component</h3>
+        <Example />
       </div>
     )
   }
 }
-export default Greeting;
+
+export default App;
+
 
 
 // const Greeting = () => {
@@ -50,5 +49,5 @@ const anotherElement = <div className="container">
 </div>;
 
 //rendering DOM
-ReactDOM.render(<Greeting />, document.getElementById("root"));
+ReactDOM.render(<App />, document.getElementById("root"));
 console.log(element);
