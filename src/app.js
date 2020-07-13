@@ -12,8 +12,7 @@ class App extends Component {
   render() {
     return (
       <div>
-        <Example firstName="Bipon" lastName="Biswas" />
-        <Example firstName="Mahfuz" lastName="Shazol" />
+        <Example name="Bipon" />
         <Parent country="Bangladesh"/>
       </div>
     )

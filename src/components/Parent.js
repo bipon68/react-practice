@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 function Parent(props) {
     return (
@@ -6,6 +7,10 @@ function Parent(props) {
             <p>Work from {props.country}</p>
         </div>
     )
+}
+
+Parent.propTypes = {
+    country: PropTypes.string.isRequired
 }
 
 export default Parent;

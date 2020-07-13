@@ -1,5 +1,5 @@
 import React, {Component} from "react";
-
+import PropTypes from "prop-types";
 
 // const Example = (props) => {
 //   console.log('Functional Props', props)
@@ -18,9 +18,14 @@ class Example extends Component {
       console.log('Class Props', this.props)
       return (
         <div>
-            <h3>Welcome {`${this.props.firstName} ${this.props.lastName}`}</h3>
+            <h3>Welcome {this.props.name}</h3>
         </div>
       )
     }
   }
+
+Example.propTypes = {
+  name: PropTypes.string.isRequired
+}
+
   export default Example;
