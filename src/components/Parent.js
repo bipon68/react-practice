@@ -1,9 +1,9 @@
 import React from "react";
 
-function Parent() {
+function Parent(props) {
     return (
         <div>
-            <p>From parent component</p>
+            <p>Work from {props.country}</p>
         </div>
     )
 }
