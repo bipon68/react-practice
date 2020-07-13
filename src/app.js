@@ -1,6 +1,7 @@
 import React, {Component} from "react";
 import ReactDOM from "react-dom";
-import Example from './Example';
+import Example from './components/Example';
+import Parent from './components/Parent';
 
 console.log("React : ", React);
 console.log("ReactDOM : ", ReactDOM);
@@ -18,6 +19,7 @@ class App extends Component {
     return (
       <div>
         <Example />
+        <Parent />
       </div>
     )
   }
