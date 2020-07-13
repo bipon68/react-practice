@@ -2,11 +2,12 @@ import React, {Component} from "react";
 import ReactDOM from "react-dom";
 import Example from './components/Example';
 import Parent from './components/Parent';
+import Friends from './components/Friends';
 
 console.log("React : ", React);
 console.log("ReactDOM : ", ReactDOM);
 
-
+//Typechecking With PropTypes - https://reactjs.org/docs/typechecking-with-proptypes.html
 
 class App extends Component {
   render() {
@@ -14,6 +15,7 @@ class App extends Component {
       <div>
         <Example name="Bipon" />
         <Parent country="Bangladesh"/>
+        <Friends friends={['Bipon', 'Ankon', 'Mahfuz', 'Shazol']}/>
       </div>
     )
   }

@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+//Typechecking With PropTypes - https://reactjs.org/docs/typechecking-with-proptypes.html
 
 function Parent(props) {
     return (

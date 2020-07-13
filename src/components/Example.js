@@ -1,5 +1,6 @@
 import React, {Component} from "react";
 import PropTypes from "prop-types";
+//Typechecking With PropTypes - https://reactjs.org/docs/typechecking-with-proptypes.html
 
 // const Example = (props) => {
 //   console.log('Functional Props', props)
@@ -27,5 +28,9 @@ class Example extends Component {
 Example.propTypes = {
   name: PropTypes.string.isRequired
 }
+Example.defaultProps = {
+  name: 'Sajib'
+}
+
 
   export default Example;
