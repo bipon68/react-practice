@@ -1,8 +1,8 @@
 import React, {Component} from "react";
 import ReactDOM from "react-dom";
-import Example from './components/Example';
-import Parent from './components/Parent';
-import Friends from './components/Friends';
+import Example from './Example';
+import Parent from './Parent';
+import Friends from './Friends';
 
 console.log("React : ", React);
 console.log("ReactDOM : ", ReactDOM);
@@ -22,15 +22,3 @@ class App extends Component {
 }
 
 export default App;
-
-
-const element = React.createElement(
-  "div",
-  null,
-  React.createElement("h2", { id: "hello" }, "Hello World")
-);
-
-
-//rendering DOM
-ReactDOM.render(<App />, document.getElementById("root"));
-// console.log(element);
