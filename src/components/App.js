@@ -17,17 +17,17 @@ class App extends Component {
       count: 0,
       counting: false
     }
-    this.makeTimer()
-    console.log(this.state)
+    // this.makeTimer()
+    // console.log(this.state)
   }
 
-  makeTimer(){
-      setInterval(() => {
-        this.setState({
-          count: this.state.count + 1
-        })
-    }, 1000);
-  }
+  // makeTimer(){
+  //     setInterval(() => {
+  //       this.setState({
+  //         count: this.state.count + 1
+  //       })
+  //   }, 1000);
+  // }
 
 
 
@@ -41,7 +41,7 @@ class App extends Component {
     return (
       <div>
         <p>{this.state.counting ? 'You are counting. Hurry': 'You are not counting!'}</p>
-        <p>Count : {this.state.count}</p>
+         <p>Count : {this.state.count}</p>
         <Example name="Bipon" />
         <Parent country="Bangladesh"/>
         <Friends friends={['Bipon', 'Ankon', 'Mahfuz', 'Shazol']}/>
