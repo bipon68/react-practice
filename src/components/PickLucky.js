@@ -7,7 +7,7 @@ import React from 'react'
      }
     return (
         <React.Fragment>
-            <p>Pick lucky no {props.luckyNum}</p>
+            {props.luckyNum && <p>Pick lucky no {props.luckyNum}</p>}
             <button onClick={handlePickRandom}>Pick</button>
         </React.Fragment>
     )
