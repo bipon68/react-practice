@@ -17,6 +17,7 @@ const Count = (props) => {
                 fontSize: '1.5em',
                 float: 'left'
             }}>{props.count}</p>
+            
         </div>
     )
 }

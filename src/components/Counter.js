@@ -67,7 +67,9 @@ class Counter extends Component {
       //   })
       // }
       generateNumber = () => {
-
+        this.setState({
+          counts: this.state.counts.map(() => Math.floor(Math.random() * 100) + 1)
+        })
       }
 
       render() {
