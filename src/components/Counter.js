@@ -1,17 +1,21 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import Count from "./Count";
 
 class Counter extends Component {
-    constructor(props){
-        super(props)
-        this.state = {
-          count: this.props.count,
-          counting: false
-        }
-        // this.handleIncrement = this.handleIncrement.bind(this)
-        this.handleDecrement = this.handleDecrement.bind(this)
-        this.handleReset = this.handleReset.bind(this)
-        // this.makeTimer()
-        // console.log(this.state)
+    // constructor(props){
+    //     super(props)
+    //     this.state = {
+    //       count: this.props.count,
+    //       counting: false
+    //     }
+    //     // this.handleIncrement = this.handleIncrement.bind(this)
+    //     this.handleDecrement = this.handleDecrement.bind(this)
+    //     this.handleReset = this.handleReset.bind(this)
+    //     // this.makeTimer()
+    //     // console.log(this.state)
+    //   }
+      state = {
+        counts: [40, 45, 90]
       }
     
       // makeTimer(){
@@ -51,16 +55,19 @@ class Counter extends Component {
         //   } 
         // })
       }
-      handleDecrement = () => {
-          this.setState((prevState) => ({
-            count: prevState.count - 1
-          }))
-      }
+      // handleDecrement = () => {
+      //     this.setState((prevState) => ({
+      //       count: prevState.count - 1
+      //     }))
+      // }
 
-      handleReset(){
-        this.setState({
-            count: 0
-        })
+      // handleReset(){
+      //   this.setState({
+      //       count: 0
+      //   })
+      // }
+      generateNumber = () => {
+
       }
 
       render() {
@@ -72,11 +79,12 @@ class Counter extends Component {
         // }
         return (
           <div>
-            <button onClick={this.handleIncrement.bind(this, 5)}>Increment</button>
-            <button onClick={this.handleDecrement}>Decrement</button>
-            <button onClick={this.handleReset}>Reset</button>
-            <p>{this.state.counting ? 'You are counting. Hurry': 'You are not counting!'}</p>
-             <p>Count : {this.state.count}</p>
+             {
+               this.state.counts.map((count, index) => (
+                 <Count key={index} count={count}/>
+               ))
+             }
+             <button onClick={this.generateNumber}>Generate</button>
           </div>
         )
       }
