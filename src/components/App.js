@@ -1,8 +1,8 @@
 import React, {Component} from "react";
 import ReactDOM from "react-dom";
-import Example from './Example';
-import Parent from './Parent';
-import Friends from './Friends';
+// import Example from './Example';
+// import Parent from './Parent';
+// import Friends from './Friends';
 
 console.log("React : ", React);
 console.log("ReactDOM : ", ReactDOM);
@@ -29,7 +29,32 @@ class App extends Component {
   //   }, 1000);
   // }
 
+  handleIncrement = () => {
+    console.log(this)
+    // changing state or update state based on existing state
+    // this.setState({
+    //   count: this.state.count + 1,
+    //   counting: true
+    // })
+    // if any setState update or change depend on other setState
+    this.setState((prevState) => ({ 
+      count: prevState.count + 1,
+      counting: true
+    }))
+    this.setState((prevState) => ({ 
+      count: prevState.count + 1,
 
+    }))
+    this.setState((prevState) => ({ 
+      count: prevState.count + 1,
+    }))
+    // this.setState((prevState) => {
+    //   return{
+    //     count: prevState.count + 1,
+    //     counting: true
+    //   } 
+    // })
+  }
 
   render() {
     // let counted;
@@ -40,11 +65,9 @@ class App extends Component {
     // }
     return (
       <div>
+        <button onClick={this.handleIncrement}>Increment</button>
         <p>{this.state.counting ? 'You are counting. Hurry': 'You are not counting!'}</p>
          <p>Count : {this.state.count}</p>
-        <Example name="Bipon" />
-        <Parent country="Bangladesh"/>
-        <Friends friends={['Bipon', 'Ankon', 'Mahfuz', 'Shazol']}/>
       </div>
     )
   }
