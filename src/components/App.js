@@ -17,7 +17,19 @@ class App extends Component {
       count: 0,
       counting: false
     }
+    this.makeTimer()
+    console.log(this.state)
   }
+
+  makeTimer(){
+      setInterval(() => {
+        this.setState({
+          count: this.state.count + 1
+        })
+    }, 1000);
+  }
+
+
 
   render() {
     // let counted;
