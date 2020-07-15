@@ -3,7 +3,7 @@ import ReactDOM from "react-dom";
 // import Example from './Example';
 // import Parent from './Parent';
 // import Friends from './Friends';
-
+import Header from "./Header";
 import Contacts from "./Contacts";
 import ContactForm from "./ContactForm";
 
@@ -17,11 +17,15 @@ console.log("ReactDOM : ", ReactDOM);
 class App extends Component {
   render(){
     return(
-      <React.Fragment>
-          <h3>Our app works</h3>
-          <ContactForm />
-          <Contacts />
-      </React.Fragment>
+      <div className="container">
+          <Header />
+          <div className="row">
+          <div class="col s4"><ContactForm /></div>
+          <div class="col s8"><Contacts /></div>
+          </div>
+          
+          
+      </div>
       // <Counter count={10} />
     )
   }
