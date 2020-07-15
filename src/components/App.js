@@ -20,11 +20,9 @@ class App extends Component {
       <div className="container">
           <Header />
           <div className="row">
-          <div class="col s4"><ContactForm /></div>
-          <div class="col s8"><Contacts /></div>
+            <div class="col s4"><ContactForm /></div>
+            <div class="col s8"><Contacts /></div>
           </div>
-          
-          
       </div>
       // <Counter count={10} />
     )
