@@ -62,8 +62,26 @@ import React, { Component } from 'react'
                     </div>
                     <p>
                         <label>
-                            <input type="checkbox" />
-                            <span>Red</span>
+                            <input 
+                                name="selectedValue" 
+                                type="radio" 
+                                value='personal'
+                                onChange={this.handleChange}
+                                checked={this.state.selectedValue === 'personal'}
+                            />
+                            <span>Personal</span>
+                        </label>
+                    </p>
+                    <p>
+                        <label>
+                            <input 
+                                name="selectedValue" 
+                                type="radio" 
+                                value='professional'
+                                onChange={this.handleChange}
+                                checked={this.state.selectedValue === 'professional'}
+                                />
+                            <span>Professional</span>
                         </label>
                     </p>
                     <button class="btn waves-effect waves-light" type="submit">Submit</button>
