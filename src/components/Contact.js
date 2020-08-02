@@ -8,12 +8,14 @@ export default class Contact extends Component {
 
 
     render() {
+        const { id, firstName, lastName, email, profession } = this.props.contact;
         return (
-            <div className='row'>
-                <div className='col s6'>
-                <div className='card'>
+            
+            <div className='card'>
                     <div className='card-content z-depth-3'>
-                        <h6 className='card-title'>Bipon
+                        <h6 className='card-title'>
+                            {firstName} &nbsp;
+                            {lastName}
                         <a href='#!' onClick={this.handleToggleContact}>
                         <i className='material-icons medium right'>
                           {this.state.toggleContact ? 'arrow_drop_up' : 'arrow_drop_down'}
@@ -27,16 +29,11 @@ export default class Contact extends Component {
                       </a>
                         </h6>
                         <ul>
-                            <li>bipon@gmail.com</li>
-                            <li>Frontend Dev.</li>
+                            <li>{email}</li>
+                            <li>{profession}</li>
                         </ul>
                     </div>
               </div>
-                </div>
-                <div className='col s6'>
-                    Single contact
-                </div>
-            </div>
         )
     }
 }

@@ -3,12 +3,24 @@ import SearchInput from './SearchInput';
 import Contact from './Contact';
 
  class Contacts extends Component {
+     
     render() {
+        console.log(this.props)
         return (
             <React.Fragment>
                 <p>Contacts</p>
                 <SearchInput />
-                <Contact />
+                <div className='row'>
+                    {
+                        this.props.contacts.map(contact => (
+                            <div className='col s6' key={contact.id}>
+                                <Contact contact={contact}/>
+                            </div>
+                        ))
+                    }
+                    
+                </div>
+                
             </React.Fragment>
         )
     }
