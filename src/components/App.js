@@ -59,6 +59,13 @@ class App extends Component {
       contacts: updatedContacts
     })
   };
+  editContact = (id) => {
+    console.log(id)
+    const fountItem = this.state.contacts.find(contact => contact.id === id);
+    this.setState({
+      selectedContact: fountItem
+    })
+  }
 
   render(){
     return(
@@ -69,6 +76,7 @@ class App extends Component {
             <div class="col s8"><Contacts 
               contacts={this.state.contacts} 
               deleteContact={this.deleteContact}
+              editContact={this.editContact}
               />
             </div>
           </div>

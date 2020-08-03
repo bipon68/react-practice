@@ -17,6 +17,7 @@ import Contact from './Contact';
                                 <Contact 
                                     contact={contact}
                                     deleteContact={this.props.deleteContact}
+                                    editContact={this.props.editContact}
                                 />
                             </div>
                         ))

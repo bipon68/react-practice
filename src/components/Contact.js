@@ -15,6 +15,10 @@ export default class Contact extends Component {
           toggleContact: !this.state.toggleContact
         })
       }
+      handleEdit = (id) => () => {
+        // console.log(id)
+        this.props.editContact(id);
+      }
 
 
     render() {
@@ -34,7 +38,7 @@ export default class Contact extends Component {
                       <a href='#!' onClick={this.handleDelete(id)}>
                         <i className='material-icons right'>delete</i>
                       </a>
-                      <a href='#!' >
+                      <a href='#!' onClick={this.handleEdit(id)}>
                         <i className='material-icons right'>edit</i>
                       </a>
                         </h6>
