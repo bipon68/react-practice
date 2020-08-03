@@ -47,6 +47,11 @@
 - Step 3 : `import style.css & js script` file into `public > index.html` file
 - Step 4 : `Create single Component like Skills`
 
+### Reference
+- Validator - https://www.npmjs.com/package/validator
+
+### Project create using only command
+
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 

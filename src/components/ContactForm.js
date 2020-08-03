@@ -1,4 +1,5 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import validator from 'validator';
 
  class ContactForm extends Component {
      state = {
@@ -11,10 +12,10 @@ import React, { Component } from 'react'
      }
      handleSubmit = (e) => {
         e.preventDefault();
-        if(this.state.firstName === ''){
+        if(this.state.firstName === '' || !validator.isLength(this.state.firstName, {min: 3})){
             this.setState({
                 errors: {
-                    firstName: 'Please provide first name'
+                    firstName: 'Please provide firstname min 3 character'
                 }
             })
             return;
@@ -27,7 +28,7 @@ import React, { Component } from 'react'
             })
             return;
         }
-        if(this.state.email === ''){
+        if (this.state.email === '' || !validator.isEmail(this.state.email)) {
             this.setState({
                 errors: {
                     email: 'Please provide email name'
@@ -35,14 +36,14 @@ import React, { Component } from 'react'
             })
             return;
         }
-        if(this.state.profession === ''){
+        if (this.state.profession === '') {
             this.setState({
-                errors: {
-                    profession: 'Please provide profession name'
-                }
-            })
+              errors: {
+                profession: 'please provide profession'
+              }
+            });
             return;
-        }
+          }
         console.log(this.state)
      }
      handleChange = (e) => {
