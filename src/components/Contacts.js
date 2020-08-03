@@ -14,7 +14,10 @@ import Contact from './Contact';
                     {
                         this.props.contacts.map(contact => (
                             <div className='col s6' key={contact.id}>
-                                <Contact contact={contact}/>
+                                <Contact 
+                                    contact={contact}
+                                    deleteContact={this.props.deleteContact}
+                                />
                             </div>
                         ))
                     }

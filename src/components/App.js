@@ -53,6 +53,12 @@ class App extends Component {
     })
     console.log(contact)
   }
+  deleteContact = (id) => {
+    const updatedContacts = this.state.contacts.filter(contact => contact.id !==id) 
+    this.setState({
+      contacts: updatedContacts
+    })
+  };
 
   render(){
     return(
@@ -60,7 +66,11 @@ class App extends Component {
           <Header />
           <div className="row">
             <div class="col s4"><ContactForm addContact={this.addContact}/></div>
-            <div class="col s8"><Contacts contacts={this.state.contacts} /></div>
+            <div class="col s8"><Contacts 
+              contacts={this.state.contacts} 
+              deleteContact={this.deleteContact}
+              />
+            </div>
           </div>
       </div>
       // <Counter count={10} />

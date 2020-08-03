@@ -6,6 +6,11 @@ export default class Contact extends Component {
         toggleContact: false
       };
 
+      handleDelete = (id) => () => {
+        console.log(id)
+        this.props.deleteContact(id)
+      }
+
 
     render() {
         const { id, firstName, lastName, email, profession } = this.props.contact;
@@ -21,7 +26,7 @@ export default class Contact extends Component {
                           {this.state.toggleContact ? 'arrow_drop_up' : 'arrow_drop_down'}
                         </i>
                       </a>
-                      <a href='#!'>
+                      <a href='#!' onClick={this.handleDelete(id)}>
                         <i className='material-icons right'>delete</i>
                       </a>
                       <a href='#!' >
