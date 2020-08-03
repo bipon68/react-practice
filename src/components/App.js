@@ -5,7 +5,7 @@ import ReactDOM from "react-dom";
 // import Friends from './Friends';
 import Header from "./Header";
 import Contacts from "./Contacts";
-import ContactForm from "./ContactForm";
+import AddContact from "./AddContact";
 import './style.css';
 
 import Counter from "./Counter";
@@ -72,7 +72,7 @@ class App extends Component {
       <div className="container">
           <Header />
           <div className="row">
-            <div class="col s4"><ContactForm addContact={this.addContact}/></div>
+            <div class="col s4"><AddContact addContact={this.addContact}/></div>
             <div class="col s8"><Contacts 
               contacts={this.state.contacts} 
               deleteContact={this.deleteContact}

@@ -9,7 +9,7 @@ import { uuid } from 'uuidv4';
 
 
 
- class ContactForm extends Component {
+ class AddContact extends Component {
      state = {
          id: uuid(),
          firstName: '',
@@ -159,4 +159,4 @@ import { uuid } from 'uuidv4';
     }
 }
 
-export default ContactForm;
+export default AddContact;
