@@ -67,12 +67,24 @@ class App extends Component {
       selectedContact: fountItem
     })
   }
-  updateContact = (contact) => {
-    console.log(contact)
-    this.setState({
-      selectedContact: null
-    })
-  };
+
+ 
+      updateContact = updateContact => {
+        const updatedContacts = this.state.contacts.map(contact =>
+                // if(contact.id === updateContact.id){
+              //   contact = updateContact
+              // }else{
+              //   return contact
+              // }
+          contact.id === updateContact.id ? (contact = updateContact) : contact
+        );
+        this.setState({
+          contacts: updatedContacts,
+          selectedContact: null
+        });
+      };
+    
+
 
   render(){
     return(

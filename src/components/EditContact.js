@@ -1,13 +1,5 @@
 import React, { Component } from 'react';
 import validator from 'validator';
-// import uuid from 'uuid/v4';
-// import { v4 as uuidv4 } from 'uuid';
-// 
-// const { v4: uuidV4 } = require('uuid');
-import { uuid } from 'uuidv4';
-
-
-
 
  class EditContact extends Component {
      state = {
@@ -55,14 +47,6 @@ import { uuid } from 'uuidv4';
           }
         console.log(this.state)
         this.props.updateContact(this.state);
-        this.setState({
-         firstName: '',
-         lastName: '',
-         email: '',
-         profession: '',
-         selectedValue: 'personal',
-         errors: {}
-        })
 
      }
      handleChange = (e) => {
@@ -74,7 +58,7 @@ import { uuid } from 'uuidv4';
 
     render() {
         console.log(this.state)
-        const {firstName,lastName,email,profession,errors} = this.state;
+        const {firstName,lastName,email,profession,selectedValue,errors} = this.state;
         return (
             <React.Fragment>
                 <p>Contact Form</p>
@@ -83,7 +67,7 @@ import { uuid } from 'uuidv4';
                         <input 
                             type="text" 
                             name="firstName" 
-                            value={this.state.firstName}
+                            value={firstName}
                             onChange={this.handleChange}
                             />
                             <span className='helper-text'>
@@ -94,7 +78,7 @@ import { uuid } from 'uuidv4';
                         <input 
                             type="text" 
                             name="lastName" 
-                            value={this.state.lastName}
+                            value={lastName}
                             onChange={this.handleChange}
                             />
                             <span className='helper-text'>
@@ -105,7 +89,7 @@ import { uuid } from 'uuidv4';
                         <input 
                             type="text" 
                             name="email" 
-                            value={this.state.email}
+                            value={email}
                             onChange={this.handleChange}
                             />
                             <span className='helper-text'>
@@ -116,7 +100,7 @@ import { uuid } from 'uuidv4';
                         <input 
                             type="text" 
                             name="profession" 
-                            value={this.state.profession}
+                            value={profession}
                             onChange={this.handleChange}
                             />
                             <span className='helper-text'>
@@ -130,7 +114,7 @@ import { uuid } from 'uuidv4';
                                 type="radio" 
                                 value='personal'
                                 onChange={this.handleChange}
-                                checked={this.state.selectedValue === 'personal'}
+                                checked={selectedValue === 'personal'}
                             />
                             <span>Personal</span>
                         </label>
@@ -142,7 +126,7 @@ import { uuid } from 'uuidv4';
                                 type="radio" 
                                 value='professional'
                                 onChange={this.handleChange}
-                                checked={this.state.selectedValue === 'professional'}
+                                checked={selectedValue === 'professional'}
                                 />
                             <span>Professional</span>
                         </label>
