@@ -6,6 +6,7 @@ import ReactDOM from "react-dom";
 import Header from "./Header";
 import Contacts from "./Contacts";
 import AddContact from "./AddContact";
+import EditContact from './EditContact';
 import './style.css';
 
 import Counter from "./Counter";
@@ -30,7 +31,7 @@ class App extends Component {
         id: 2,
         firstName: 'Sandip',
         lastName: 'Rahman',
-        email: 'kh@gmail.com',
+        email: 'sr@gmail.com',
         profession: 'Graphics Designer',
         selectedValue: 'professional'
       },
@@ -66,13 +67,25 @@ class App extends Component {
       selectedContact: fountItem
     })
   }
+  updateContact = (contact) => {
+    console.log(contact)
+    this.setState({
+      selectedContact: null
+    })
+  };
 
   render(){
     return(
       <div className="container">
           <Header />
           <div className="row">
-            <div class="col s4"><AddContact addContact={this.addContact}/></div>
+            <div class="col s4">
+              {this.state.selectedContact ? <EditContact 
+                  contact={this.state.selectedContact} 
+                  updateContact={this.updateContact} /> 
+                : <AddContact addContact={this.addContact}/> 
+              }
+              </div>
             <div class="col s8"><Contacts 
               contacts={this.state.contacts} 
               deleteContact={this.deleteContact}
