@@ -6,10 +6,43 @@ import React, { Component } from 'react'
          lastName: '',
          email: '',
          profession: '',
-         selectedValue: 'personal'
+         selectedValue: 'personal',
+         errors: {}
      }
      handleSubmit = (e) => {
         e.preventDefault();
+        if(this.state.firstName === ''){
+            this.setState({
+                errors: {
+                    firstName: 'Please provide first name'
+                }
+            })
+            return;
+        }
+        if(this.state.lastName === ''){
+            this.setState({
+                errors: {
+                    lastName: 'Please provide last name'
+                }
+            })
+            return;
+        }
+        if(this.state.email === ''){
+            this.setState({
+                errors: {
+                    email: 'Please provide email name'
+                }
+            })
+            return;
+        }
+        if(this.state.profession === ''){
+            this.setState({
+                errors: {
+                    profession: 'Please provide profession name'
+                }
+            })
+            return;
+        }
         console.log(this.state)
      }
      handleChange = (e) => {
@@ -19,7 +52,8 @@ import React, { Component } from 'react'
      }
 
     render() {
-        //console.log(this.state)
+        console.log(this.state)
+        const {firstName,lastName,email,profession,errors} = this.state;
         return (
             <React.Fragment>
                 <p>Contact Form</p>
@@ -32,6 +66,9 @@ import React, { Component } from 'react'
                             value={this.state.firstName}
                             onChange={this.handleChange}
                             />
+                            <span className='helper-text'>
+                                {errors.firstName && errors.firstName}
+                            </span>
                     </div>
                     <div className="input-field">
                         <label htmlFor="lastName">Last Name</label>
@@ -41,6 +78,9 @@ import React, { Component } from 'react'
                             value={this.state.lastName}
                             onChange={this.handleChange}
                             />
+                            <span className='helper-text'>
+                                {errors.lastName && errors.lastName}
+                            </span>
                     </div>
                     <div className="input-field">
                         <label htmlFor="email">Email</label>
@@ -50,6 +90,9 @@ import React, { Component } from 'react'
                             value={this.state.email}
                             onChange={this.handleChange}
                             />
+                            <span className='helper-text'>
+                                {errors.email && errors.email}
+                            </span>
                     </div>
                     <div className="input-field">
                         <label htmlFor="profession">Profession</label>
@@ -59,6 +102,9 @@ import React, { Component } from 'react'
                             value={this.state.profession}
                             onChange={this.handleChange}
                             />
+                            <span className='helper-text'>
+                                {errors.profession && errors.profession}
+                            </span>
                     </div>
                     <p>
                         <label>
