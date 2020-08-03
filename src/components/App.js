@@ -6,6 +6,7 @@ import ReactDOM from "react-dom";
 import Header from "./Header";
 import Contacts from "./Contacts";
 import ContactForm from "./ContactForm";
+import './style.css';
 
 import Counter from "./Counter";
 
