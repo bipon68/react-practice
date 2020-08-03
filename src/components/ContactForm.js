@@ -45,12 +45,14 @@ import validator from 'validator';
             return;
           }
         console.log(this.state)
+        this.props.addContact(this.state);
      }
      handleChange = (e) => {
         this.setState({
             [e.target.name]: e.target.value
         })
      }
+     
 
     render() {
         console.log(this.state)

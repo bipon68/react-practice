@@ -46,12 +46,20 @@ class App extends Component {
     selectedContact: null
   }
 
+  addContact = (contact) => {
+    this.setState({
+      // spread this one
+      contacts: [...this.state.contacts, contact]
+    })
+    console.log(contact)
+  }
+
   render(){
     return(
       <div className="container">
           <Header />
           <div className="row">
-            <div class="col s4"><ContactForm /></div>
+            <div class="col s4"><ContactForm addContact={this.addContact}/></div>
             <div class="col s8"><Contacts contacts={this.state.contacts} /></div>
           </div>
       </div>
