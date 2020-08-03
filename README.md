@@ -49,6 +49,7 @@
 
 ### Reference
 - Validator - https://www.npmjs.com/package/validator
+- UUID - https://www.npmjs.com/package/uuid
 
 ### Project create using only command
 

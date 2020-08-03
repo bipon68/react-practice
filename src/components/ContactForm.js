@@ -1,8 +1,17 @@
 import React, { Component } from 'react';
 import validator from 'validator';
+// import uuid from 'uuid/v4';
+// import { v4 as uuidv4 } from 'uuid';
+// 
+// const { v4: uuidV4 } = require('uuid');
+import { uuid } from 'uuidv4';
+
+
+
 
  class ContactForm extends Component {
      state = {
+         id: uuid(),
          firstName: '',
          lastName: '',
          email: '',
