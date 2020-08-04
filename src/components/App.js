@@ -93,11 +93,13 @@ class App extends Component {
     return(
       <div className="container">
       <Header />
-          <Route exact path='/' render={() => <Contacts 
+          <Route exact path='/' render={(props) => <Contacts 
             contacts={this.state.contacts} 
             deleteContact={this.deleteContact}
             editContact={this.editContact}
+            {...props}
             />}/>
+            <Route path='/add' render={() => <AddContact />}/>
           <Route path='/about' component={About}/>
       </div>
       // <Counter count={10} />
