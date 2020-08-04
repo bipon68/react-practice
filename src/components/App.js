@@ -94,6 +94,7 @@ class App extends Component {
       <div className="container">
          
           <Route path='/about' component={About}/>
+          <Route path='/about/:bipon' component={About}/>
       </div>
       // <Counter count={10} />
     )

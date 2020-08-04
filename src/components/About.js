@@ -4,7 +4,7 @@ export default class About extends Component {
     render() {
         return (
             <div>
-                About Us Page
+                About Us Page {this.props.match.params.bipon}
             </div>
         )
     }
