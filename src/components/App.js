@@ -10,7 +10,7 @@ import EditContact from './EditContact';
 import './style.css';
 import About from './About';
 
-import { Route } from 'react-router-dom';
+import { Route, Redirect } from 'react-router-dom';
 
 import Counter from "./Counter";
 
@@ -99,7 +99,17 @@ class App extends Component {
             editContact={this.editContact}
             {...props}
             />}/>
-            <Route path='/add' render={() => <AddContact />}/>
+            <Route path='/add' render={() => <AddContact addContact={this.addContact}/>}/>
+            <Route path='/edit/:id' render={(props) => (
+              this.state.selectedContact ? (
+                <EditContact
+                    contact={this.state.selectedContact}
+                    updateContact={this.updateContact}
+                    {...props}
+            />
+              ) : (<Redirect to='/' />)
+            )}/>
+
           <Route path='/about' component={About}/>
       </div>
       // <Counter count={10} />
@@ -112,11 +122,11 @@ export default App;
 //
 // <div className="row">
 //             <div class="col s4">
-//               {this.state.selectedContact ? <EditContact 
-//                   contact={this.state.selectedContact} 
-//                   updateContact={this.updateContact} /> 
-//                 : <AddContact addContact={this.addContact}/> 
-//               }
+              // {this.state.selectedContact ? <EditContact 
+              //     contact={this.state.selectedContact} 
+              //     updateContact={this.updateContact} /> 
+              //   : <AddContact addContact={this.addContact}/> 
+              // }
 //               </div>
 //             <div class="col s8"><Contacts 
 //               contacts={this.state.contacts} 
