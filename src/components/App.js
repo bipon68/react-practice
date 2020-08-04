@@ -9,8 +9,9 @@ import AddContact from "./AddContact";
 import EditContact from './EditContact';
 import './style.css';
 import About from './About';
+import NotFound from './NotFound';
 
-import { Route, Redirect } from 'react-router-dom';
+import { Route, Redirect, Switch } from 'react-router-dom';
 
 import Counter from "./Counter";
 
@@ -93,24 +94,28 @@ class App extends Component {
     return(
       <div className="container">
       <Header />
-          <Route exact path='/' render={(props) => <Contacts 
-            contacts={this.state.contacts} 
-            deleteContact={this.deleteContact}
-            editContact={this.editContact}
-            {...props}
-            />}/>
-            <Route path='/add' render={() => <AddContact addContact={this.addContact}/>}/>
-            <Route path='/edit/:id' render={(props) => (
-              this.state.selectedContact ? (
-                <EditContact
-                    contact={this.state.selectedContact}
-                    updateContact={this.updateContact}
-                    {...props}
-            />
-              ) : (<Redirect to='/' />)
-            )}/>
+      <Switch>
+        <Route exact path='/' render={(props) => <Contacts 
+          contacts={this.state.contacts} 
+          deleteContact={this.deleteContact}
+          editContact={this.editContact}
+          {...props}
+          />}/>
+          <Route path='/add' render={() => <AddContact addContact={this.addContact}/>}/>
+          <Route path='/edit/:id' render={(props) => (
+            this.state.selectedContact ? (
+              <EditContact
+                  contact={this.state.selectedContact}
+                  updateContact={this.updateContact}
+                  {...props}
+          />
+            ) : (<Redirect to='/' />)
+          )}/>
 
-          <Route path='/about' component={About}/>
+        <Route path='/about' component={About}/>
+        <Route component={NotFound} />
+      </Switch>
+          
       </div>
       // <Counter count={10} />
     )
