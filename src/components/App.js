@@ -8,6 +8,9 @@ import Contacts from "./Contacts";
 import AddContact from "./AddContact";
 import EditContact from './EditContact';
 import './style.css';
+import About from './About';
+
+import { Route } from 'react-router-dom';
 
 import Counter from "./Counter";
 
@@ -89,22 +92,8 @@ class App extends Component {
   render(){
     return(
       <div className="container">
-          <Header />
-          <div className="row">
-            <div class="col s4">
-              {this.state.selectedContact ? <EditContact 
-                  contact={this.state.selectedContact} 
-                  updateContact={this.updateContact} /> 
-                : <AddContact addContact={this.addContact}/> 
-              }
-              </div>
-            <div class="col s8"><Contacts 
-              contacts={this.state.contacts} 
-              deleteContact={this.deleteContact}
-              editContact={this.editContact}
-              />
-            </div>
-          </div>
+         
+          <Route path='/about' component={About}/>
       </div>
       // <Counter count={10} />
     )
@@ -112,3 +101,20 @@ class App extends Component {
 }
 
 export default App;
+
+//<Header />
+// <div className="row">
+//             <div class="col s4">
+//               {this.state.selectedContact ? <EditContact 
+//                   contact={this.state.selectedContact} 
+//                   updateContact={this.updateContact} /> 
+//                 : <AddContact addContact={this.addContact}/> 
+//               }
+//               </div>
+//             <div class="col s8"><Contacts 
+//               contacts={this.state.contacts} 
+//               deleteContact={this.deleteContact}
+//               editContact={this.editContact}
+//               />
+//             </div>
+//           </div>
