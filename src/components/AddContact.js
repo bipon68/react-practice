@@ -55,14 +55,15 @@ import { uuid } from 'uuidv4';
           }
         console.log(this.state)
         this.props.addContact(this.state);
-        this.setState({
-         firstName: '',
-         lastName: '',
-         email: '',
-         profession: '',
-         selectedValue: 'personal',
-         errors: {}
-        })
+        this.props.history.push('/');
+        // this.setState({
+        //  firstName: '',
+        //  lastName: '',
+        //  email: '',
+        //  profession: '',
+        //  selectedValue: 'personal',
+        //  errors: {}
+        // })
 
      }
      handleChange = (e) => {

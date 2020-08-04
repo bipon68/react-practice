@@ -47,6 +47,7 @@ import validator from 'validator';
           }
         console.log(this.state)
         this.props.updateContact(this.state);
+        this.props.history.push('/');
      }
 
      componentWillReceiveProps(nextProps){

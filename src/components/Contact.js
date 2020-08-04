@@ -1,4 +1,5 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 
 export default class Contact extends Component {
 
@@ -38,9 +39,9 @@ export default class Contact extends Component {
                       <a href='#!' onClick={this.handleDelete(id)}>
                         <i className='material-icons right'>delete</i>
                       </a>
-                      <a href='#!' onClick={this.handleEdit(id)}>
+                      <Link to={`/edit/${id}`} onClick={this.handleEdit(id)}>
                         <i className='material-icons right'>edit</i>
-                      </a>
+                      </Link>
                         </h6>
                         {this.state.toggleContact && (
                           <ul>

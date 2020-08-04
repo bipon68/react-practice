@@ -101,7 +101,7 @@ class App extends Component {
           editContact={this.editContact}
           {...props}
           />}/>
-          <Route path='/add' render={() => <AddContact addContact={this.addContact}/>}/>
+          <Route path='/add' render={(props) => <AddContact addContact={this.addContact} {...props} />}/>
           <Route path='/edit/:id' render={(props) => (
             this.state.selectedContact ? (
               <EditContact
