@@ -92,9 +92,13 @@ class App extends Component {
   render(){
     return(
       <div className="container">
-         
+      <Header />
+          <Route exact path='/' render={() => <Contacts 
+            contacts={this.state.contacts} 
+            deleteContact={this.deleteContact}
+            editContact={this.editContact}
+            />}/>
           <Route path='/about' component={About}/>
-          <Route path='/about/:bipon' component={About}/>
       </div>
       // <Counter count={10} />
     )
@@ -103,7 +107,7 @@ class App extends Component {
 
 export default App;
 
-//<Header />
+//
 // <div className="row">
 //             <div class="col s4">
 //               {this.state.selectedContact ? <EditContact 
