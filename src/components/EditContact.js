@@ -47,8 +47,23 @@ import validator from 'validator';
           }
         console.log(this.state)
         this.props.updateContact(this.state);
-
      }
+
+     componentWillReceiveProps(nextProps){
+         console.log(nextProps)
+         if(nextProps.contact.id !==this.state.id){
+             this.setState({
+                id: nextProps.contact.id,
+                firstName: nextProps.contact.firstName,
+                lastName: nextProps.contact.lastName,
+                email: nextProps.contact.email,
+                profession: nextProps.contact.profession,
+                selectedValue: nextProps.contact.selectedValue,
+                errors: {}
+             })
+         }
+     }
+
      handleChange = (e) => {
         this.setState({
             [e.target.name]: e.target.value
