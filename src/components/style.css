@@ -1,3 +1,10 @@
 .input-field .helper-text {
   color: red;
 }
+.brand-logo.nav-active {
+  background-color: inherit;
+}
+
+.nav-active {
+  background-color: #ea454b;
+}
