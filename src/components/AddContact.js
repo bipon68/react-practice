@@ -78,7 +78,7 @@ import { uuid } from 'uuidv4';
         const {firstName,lastName,email,profession,errors} = this.state;
         return (
             <React.Fragment>
-                <p>Contact Form</p>
+            <h3>Add Contact</h3>
                 <form onSubmit={this.handleSubmit}>
                     <div className="input-field">
                         <label htmlFor="firstName">First Name</label>

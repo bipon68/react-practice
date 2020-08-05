@@ -11,9 +11,14 @@ import { BrowserRouter, Route, Link } from "react-router-dom";
 // console.log(subtract(num1,num2))
 // console.log(multiply(num1,num2))
 
+import { ContactProvider, ContactContext } from './contexts/Contact.context';
+
 const router = (
     <BrowserRouter>
-        <App />
+        <ContactProvider>
+            <App />
+        </ContactProvider>
+        
     </BrowserRouter>
 )
 

@@ -17,10 +17,14 @@ import Counter from "./Counter";
 
 console.log("React : ", React);
 console.log("ReactDOM : ", ReactDOM);
+import { ContactContext } from '../contexts/Contact.context';
 
 //Typechecking With PropTypes - https://reactjs.org/docs/typechecking-with-proptypes.html
 
 class App extends Component {
+
+  static contextType = ContactContext;
+
   state = {
     contacts: [
       {
@@ -91,9 +95,20 @@ class App extends Component {
 
 
   render(){
+    console.log(this.context)
     return(
       <div className="container">
-      <Header />
+      
+          
+      </div>
+      // <Counter count={10} />
+    )
+  }
+}
+
+export default App;
+/*
+<Header />
       <Switch>
         <Route exact path='/' render={(props) => <Contacts 
           contacts={this.state.contacts} 
@@ -115,15 +130,7 @@ class App extends Component {
         <Route path='/about' component={About}/>
         <Route component={NotFound} />
       </Switch>
-          
-      </div>
-      // <Counter count={10} />
-    )
-  }
-}
-
-export default App;
-
+*/
 //
 // <div className="row">
 //             <div class="col s4">

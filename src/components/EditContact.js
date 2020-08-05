@@ -77,7 +77,7 @@ import validator from 'validator';
         const {firstName,lastName,email,profession,selectedValue,errors} = this.state;
         return (
             <React.Fragment>
-                <p>Contact Form</p>
+            <h3>Edit Contact</h3>
                 <form onSubmit={this.handleSubmit}>
                     <div className="input-field">
                         <input 
