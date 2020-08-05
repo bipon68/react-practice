@@ -25,80 +25,69 @@ class App extends Component {
 
   static contextType = ContactContext;
 
-  state = {
-    contacts: [
-      {
-        id: 1,
-        firstName: 'Bipon',
-        lastName: 'Biswas',
-        email: 'bipon770@gmail.com',
-        profession: 'Web developer',
-        selectedValue: 'personal'
-      },
-      {
-        id: 2,
-        firstName: 'Sandip',
-        lastName: 'Rahman',
-        email: 'sr@gmail.com',
-        profession: 'Graphics Designer',
-        selectedValue: 'professional'
-      },
-      {
-        id: 3,
-        firstName: 'Sajib',
-        lastName: 'Hasan',
-        email: 'sajib@gmail.com',
-        profession: 'Php developer',
-        selectedValue: 'personal'
-      }
-    ],
-    selectedContact: null
-  }
-
-  addContact = (contact) => {
-    this.setState({
-      // spread this one
-      contacts: [...this.state.contacts, contact]
-    })
-    console.log(contact)
-  }
-  deleteContact = (id) => {
-    const updatedContacts = this.state.contacts.filter(contact => contact.id !==id) 
-    this.setState({
-      contacts: updatedContacts
-    })
-  };
-  editContact = (id) => {
-    console.log(id)
-    const fountItem = this.state.contacts.find(contact => contact.id === id);
-    this.setState({
-      selectedContact: fountItem
-    })
-  }
+  // state = {
+  //   contacts: [
+  //     {
+  //       id: 1,
+  //       firstName: 'Bipon',
+  //       lastName: 'Biswas',
+  //       email: 'bipon770@gmail.com',
+  //       profession: 'Web developer',
+  //       selectedValue: 'personal'
+  //     },
+  //     {
+  //       id: 2,
+  //       firstName: 'Sandip',
+  //       lastName: 'Rahman',
+  //       email: 'sr@gmail.com',
+  //       profession: 'Graphics Designer',
+  //       selectedValue: 'professional'
+  //     },
+  //     {
+  //       id: 3,
+  //       firstName: 'Sajib',
+  //       lastName: 'Hasan',
+  //       email: 'sajib@gmail.com',
+  //       profession: 'Php developer',
+  //       selectedValue: 'personal'
+  //     }
+  //   ],
+  //   selectedContact: null
+  // }
 
  
-      updateContact = updateContact => {
-        const updatedContacts = this.state.contacts.map(contact =>
-                // if(contact.id === updateContact.id){
-              //   contact = updateContact
-              // }else{
-              //   return contact
-              // }
-          contact.id === updateContact.id ? (contact = updateContact) : contact
-        );
-        this.setState({
-          contacts: updatedContacts,
-          selectedContact: null
-        });
-      };
     
 
 
   render(){
     console.log(this.context)
+    const {state: {contacts, selectedContact}, addContact, editContact, deleteContact, updateContact} = this.context
+    // const {contacts, selectedContact} = this.context.state
+    // const {addContact, editContact, deleteContact, updateContact} = this.context
     return(
       <div className="container">
-      
+        <Header />
+        <Switch>
+          <Route exact path='/' render={(props) => <Contacts 
+            contacts={contacts} 
+            deleteContact={deleteContact}
+            editContact={editContact}
+            {...props}
+            />}/>
+            <Route path='/add' render={(props) => <AddContact addContact={addContact} {...props} />}/>
+            <Route path='/edit/:id' render={(props) => (
+              selectedContact ? (
+                <EditContact
+                    contact={selectedContact}
+                    updateContact={updateContact}
+                    {...props}
+            />
+              ) : (<Redirect to='/' />)
+            )}/>
+
+          <Route path='/about' component={About}/>
+          <Route component={NotFound} />
+        </Switch>
           
       </div>
       // <Counter count={10} />
@@ -108,28 +97,7 @@ class App extends Component {
 
 export default App;
 /*
-<Header />
-      <Switch>
-        <Route exact path='/' render={(props) => <Contacts 
-          contacts={this.state.contacts} 
-          deleteContact={this.deleteContact}
-          editContact={this.editContact}
-          {...props}
-          />}/>
-          <Route path='/add' render={(props) => <AddContact addContact={this.addContact} {...props} />}/>
-          <Route path='/edit/:id' render={(props) => (
-            this.state.selectedContact ? (
-              <EditContact
-                  contact={this.state.selectedContact}
-                  updateContact={this.updateContact}
-                  {...props}
-          />
-            ) : (<Redirect to='/' />)
-          )}/>
 
-        <Route path='/about' component={About}/>
-        <Route component={NotFound} />
-      </Switch>
 */
 //
 // <div className="row">
