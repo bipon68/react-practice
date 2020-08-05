@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import SearchInput from './SearchInput';
+// import SearchInput from './SearchInput';
 import Contact from './Contact';
 import { ContactContext } from '../contexts/Contact.context';
 
@@ -48,9 +48,8 @@ import { ContactContext } from '../contexts/Contact.context';
                     {
                         // this.props.contacts.map(contact => (
                             filteredList.map(contact => (
-                            <div className='col s6'>
+                            <div className='col s6' key={contact.id}>
                                 <Contact 
-                                    key={contact.id}
                                     contact={contact}
                                 />
                             </div>

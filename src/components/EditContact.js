@@ -1,14 +1,17 @@
 import React, { Component } from 'react';
 import validator from 'validator';
+import { ContactContext } from '../contexts/Contact.context';
 
  class EditContact extends Component {
+    static contextType = ContactContext;
      state = {
-        id: this.props.contact.id,
-        firstName: this.props.contact.firstName,
-        lastName: this.props.contact.lastName,
-        email: this.props.contact.email,
-        profession: this.props.contact.profession,
-        selectedValue: this.props.contact.selectedValue,
+        // id: this.props.contact.id,
+        id: this.context.state.selectedContact.id,
+        firstName: this.context.state.selectedContact.firstName,
+        lastName: this.context.state.selectedContact.lastName,
+        email: this.context.state.selectedContact.email,
+        profession: this.context.state.selectedContact.profession,
+        selectedValue: this.context.state.selectedContact.selectedValue,
         errors: {}
      }
      handleSubmit = (e) => {
@@ -45,8 +48,8 @@ import validator from 'validator';
             });
             return;
           }
-        console.log(this.state)
-        this.props.updateContact(this.state);
+        // console.log(this.state)
+        this.context.updateContact(this.state);
         this.props.history.push('/');
      }
 

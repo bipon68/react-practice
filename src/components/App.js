@@ -28,27 +28,18 @@ class App extends Component {
 
   render(){
     console.log(this.context)
-    const {state: {contacts, selectedContact}, addContact, editContact, deleteContact, updateContact} = this.context
+    const {state: {selectedContact}} = this.context
     // const {contacts, selectedContact} = this.context.state
     // const {addContact, editContact, deleteContact, updateContact} = this.context
     return(
       <div className="container">
         <Header />
         <Switch>
-          <Route exact path='/' render={(props) => <Contacts 
-            contacts={contacts} 
-            deleteContact={deleteContact}
-            editContact={editContact}
-            {...props}
-            />}/>
-            <Route path='/add' render={(props) => <AddContact addContact={addContact} {...props} />}/>
+          <Route path='/' exact component={Contacts} />
+          <Route path='/add' component={AddContact} />
             <Route path='/edit/:id' render={(props) => (
               selectedContact ? (
-                <EditContact
-                    contact={selectedContact}
-                    updateContact={updateContact}
-                    {...props}
-            />
+                <EditContact {...props} />
               ) : (<Redirect to='/' />)
             )}/>
 
@@ -64,7 +55,8 @@ class App extends Component {
 
 export default App;
 /*
-
+<Route exact path='/' render={(props) => <Contacts {...props} />}/>
+            <Route path='/add' render={(props) => <AddContact {...props} />}/>
 */
 //
 // <div className="row">

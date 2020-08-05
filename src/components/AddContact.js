@@ -5,11 +5,12 @@ import validator from 'validator';
 // 
 // const { v4: uuidV4 } = require('uuid');
 import { uuid } from 'uuidv4';
-
+import { ContactContext } from '../contexts/Contact.context';
 
 
 
  class AddContact extends Component {
+    static contextType = ContactContext;
      state = {
          id: uuid(),
          firstName: '',
@@ -53,17 +54,9 @@ import { uuid } from 'uuidv4';
             });
             return;
           }
-        console.log(this.state)
-        this.props.addContact(this.state);
+        // console.log(this.state)
+        this.context.addContact(this.state);
         this.props.history.push('/');
-        // this.setState({
-        //  firstName: '',
-        //  lastName: '',
-        //  email: '',
-        //  profession: '',
-        //  selectedValue: 'personal',
-        //  errors: {}
-        // })
 
      }
      handleChange = (e) => {
