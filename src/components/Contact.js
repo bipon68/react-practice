@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import { ContactContext } from '../contexts/Contact.context';
 
 export default class Contact extends Component {
+
+  static contextType = ContactContext;
 
     state = {
         toggleContact: false
@@ -9,7 +12,8 @@ export default class Contact extends Component {
 
       handleDelete = (id) => () => {
         console.log(id)
-        this.props.deleteContact(id)
+        this.context.deleteContact(id)
+        // this.props.deleteContact(id)
       }
       handleToggleContact = () => {
         this.setState({
@@ -18,7 +22,8 @@ export default class Contact extends Component {
       }
       handleEdit = (id) => () => {
         // console.log(id)
-        this.props.editContact(id);
+        this.context.editContact(id)
+        // this.props.editContact(id);
       }
 
 
