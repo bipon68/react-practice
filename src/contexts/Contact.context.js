@@ -4,16 +4,35 @@ export const ContactContext = React.createContext();
 // will take existing state
 // modify and return based on action Ex: add, edit, update, delete
 // return another from of state
+// const reducer = (state, action) => {
+//     if(action.type === 'ADD_COUNT'){
+//         return{
+//             ...state,
+//             count: state.count + action.payload
+//         }
+//     }
+// }
+
+// console.log(reducer({count: 0, counting: false}, {type: 'ADD_COUNT', payload: 1}))
+
 const reducer = (state, action) => {
-    if(action.type === 'ADD_COUNT'){
-        return{
-            ...state,
-            count: state.count + action.payload
-        }
+    switch (action.type){
+        case 'ADD_CONTACT':
+            return{
+                ...state,
+                contacts: [...state.contacts, action.payload]
+            };
+        default: 
+            return state;
     }
 }
 
-console.log(reducer({count: 0, counting: false}, {type: 'ADD_COUNT', payload: 1}))
+// console.log(
+//     reducer(existingState, {
+//         type: 'ADD_CONTACT',
+//         payload: {firstName: 'bipon', lastName: 'biswas'}
+//     })
+// )
 
 export class ContactProvider extends Component {
 
@@ -47,13 +66,15 @@ export class ContactProvider extends Component {
         selectedContact: null
       }
 
-      addContact = (contact) => {
-        this.setState({
-          // spread this one
-          contacts: [...this.state.contacts, contact]
-        })
-        console.log(contact)
-      }
+      dispatch = action => this.setState(state => reducer(state, action))
+
+      // addContact = (contact) => {
+      //   this.setState({
+      //     // spread this one
+      //     contacts: [...this.state.contacts, contact]
+      //   })
+      //   console.log(contact)
+      // }
       deleteContact = (id) => {
         const updatedContacts = this.state.contacts.filter(contact => contact.id !==id) 
         this.setState({
@@ -89,10 +110,11 @@ export class ContactProvider extends Component {
         return(
             <ContactContext.Provider value={{
                 state: this.state,
-                addContact: this.addContact,
+                //addContact: this.addContact,
                 editContact: this.editContact,
                 updateContact: this.updateContact,
-                deleteContact: this.deleteContact
+                deleteContact: this.deleteContact,
+                dispatch: this.dispatch
                 // firstName: 'Bipon',
                 // lastName: 'Biswas'
             }}>
