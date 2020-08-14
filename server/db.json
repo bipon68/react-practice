@@ -9,13 +9,12 @@
       "selectedValue": "professional"
     },
     {
-      "id": 2,
-      "firstName": "John1",
+      "firstName": "John",
       "lastName": "Doe",
       "email": "johndoe@gmail.com",
       "profession": "Front End Developer",
       "selectedValue": "professional",
-      "errors": {}
+      "id": 2
     },
     {
       "id": "mmiXEFH",
@@ -34,6 +33,22 @@
       "profession": "asdfasd",
       "selectedValue": "professional",
       "errors": {}
+    },
+    {
+      "firstName": "Miki",
+      "lastName": "Mouse",
+      "email": "mik@yahoo.com",
+      "profession": "adsf",
+      "selectedValue": "professional",
+      "id": 3
+    },
+    {
+      "firstName": "Simi",
+      "lastName": "John",
+      "email": "simmi@webmail.com",
+      "profession": "asdfasd",
+      "selectedValue": "personal",
+      "id": 4
     }
   ]
 }

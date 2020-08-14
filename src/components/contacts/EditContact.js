@@ -48,11 +48,13 @@ import { ContactContext } from '../../contexts/Contact.context';
             });
             return;
           }
-
+          // rest operator
+          const { id, errors, ...updatedContact } = this.state;
+        //   console.log(updatedContact);
           const contact = await fetch(`http://localhost:3000/contacts/${this.state.id}`, {
                 method: 'PUT',
                 headers: {'Content-Type': 'application/json'},
-                body: JSON.stringify(this.state)
+                body: JSON.stringify(updatedContact)
             }).then(data => data.json())
             console.log(contact)
         // console.log(this.state)

@@ -54,13 +54,15 @@ import { ContactContext } from '../../contexts/Contact.context';
             });
             return;
           }
+          // rest operator
+          const { id, errors, ...contactToAdd } = this.state;
              // posting data to server
        const contact = await fetch('http://localhost:3000/contacts', {
             method: 'POST',
             headers: {
             'Content-Type': 'application/json'
             },
-            body: JSON.stringify(this.state)
+            body: JSON.stringify(contactToAdd)
         }).then(res => res.json())
 
         // console.log(this.state)
