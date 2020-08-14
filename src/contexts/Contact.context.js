@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 export const ContactContext = React.createContext();
-
+import axios from 'axios';
 // will take existing state
 // modify and return based on action Ex: add, edit, update, delete
 // return another from of state
@@ -61,12 +61,23 @@ export class ContactProvider extends Component {
       }
       
       async componentDidMount(){
-        const contacts =  await fetch('http://localhost:3000/contacts')
-        .then(res => res.json())
-        console.log(contacts)
-        this.setState({
-          contacts
-        })
+        try {
+          const res = await axios.get('http://localhost:3000/contacts');
+          this.setState({
+            contacts: res.data
+          });
+          // const contacts = await fetch('http://localhost:3000/contacts').then(res =>
+          //   res.json()
+          // );
+        } catch (e) {
+          console.log(e);
+        }
+        // const contacts =  await fetch('http://localhost:3000/contacts')
+        // .then(res => res.json())
+        // console.log(contacts)
+        // this.setState({
+        //   contacts
+        // })
       }
 
       dispatch = action => this.setState(state => reducer(state, action))

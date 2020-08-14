@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { ContactContext } from '../../contexts/Contact.context';
+import axios from 'axios';
 
 export default class Contact extends Component {
 
@@ -11,10 +12,19 @@ export default class Contact extends Component {
       };
 
       handleDelete = (id) => async() => {
-        console.log(id)
-        await fetch(`http://localhost:3000/contacts/${id}`, {
-          method: 'DELETE'
-        })
+        try {
+          await axios.delete(`http://localhost:3000/contacts/${id}`);
+          // await fetch(`http://localhost:3000/contacts/${id}`, {
+          //   method: 'DELETE'
+          // });
+          this.context.dispatch({ type: 'DELETE_CONTACT', payload: id });
+        } catch (e) {
+          console.log(e);
+        }
+        // console.log(id)
+        // await fetch(`http://localhost:3000/contacts/${id}`, {
+        //   method: 'DELETE'
+        // })
         this.context.dispatch({type: 'DELETE_CONTACT', payload: id});
         // this.context.dispatch({type: 'DELETE_CONTACT', payload: id});
         // this.context.deleteContact(id)

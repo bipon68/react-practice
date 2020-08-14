@@ -17,6 +17,7 @@
 - `yarn add concurrently` help for two command running
 - if want to port fixed `"dev:server": "yarn --prefix server json-server --watch ./server/db.json -p 8001",`
 - `yarn add babel-polyfill`
+- `yarn add axios`
 
 ## json server creation
 - json server ref : https://github.com/typicode/json-server
@@ -71,6 +72,7 @@
 - React router dom - https://www.npmjs.com/package/react-router-dom
 - fetch api : https://javascript.info/fetch
 - babel polyfill - https://github.com/babel/babel/tree/master/packages/babel-polyfill (regenerator-runtime issue)
+- Axios : https://www.npmjs.com/package/axios
 
 ### Project create using only command
 

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import validator from 'validator';
 import { ContactContext } from '../../contexts/Contact.context';
+import axios from 'axios';
 
  class EditContact extends Component {
     static contextType = ContactContext;
@@ -51,6 +52,25 @@ import { ContactContext } from '../../contexts/Contact.context';
           // rest operator
           const { id, errors, ...updatedContact } = this.state;
         //   console.log(updatedContact);
+
+        try {
+            const res = await axios.put(
+              `http://localhost:3000/contacts/${id}`, updatedContact
+            );
+            // const contact = await fetch(`http://localhost:3000/contacts/${id}`, {
+            //   method: 'PUT',
+            //   headers: {
+            //     'Content-Type': 'application/json'
+            //   },
+            //   body: JSON.stringify(updatedContact)
+            // }).then(data => data.json());
+            this.context.dispatch({ type: 'UPDATE_CONTACT', payload: res.data });
+            this.props.history.push('/');
+          } catch (e) {
+            console.log(e);
+          }
+
+        /*
           const contact = await fetch(`http://localhost:3000/contacts/${this.state.id}`, {
                 method: 'PUT',
                 headers: {'Content-Type': 'application/json'},
@@ -62,6 +82,7 @@ import { ContactContext } from '../../contexts/Contact.context';
         // this.context.dispatch({type: 'UPDATE_CONTACT', payload: this.state});
         this.context.dispatch({type: 'UPDATE_CONTACT', payload: contact});
         this.props.history.push('/');
+        */
      }
 
 
