@@ -14,7 +14,7 @@ import { ContactContext } from '../../contexts/Contact.context';
         selectedValue: this.context.state.selectedContact.selectedValue,
         errors: {}
      }
-     handleSubmit = (e) => {
+     handleSubmit = async (e) => {
         e.preventDefault();
         if(this.state.firstName === '' || !validator.isLength(this.state.firstName, {min: 3})){
             this.setState({
@@ -48,26 +48,20 @@ import { ContactContext } from '../../contexts/Contact.context';
             });
             return;
           }
+
+          const contact = await fetch(`http://localhost:3000/contacts/${this.state.id}`, {
+                method: 'PUT',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify(this.state)
+            }).then(data => data.json())
+            console.log(contact)
         // console.log(this.state)
         // this.context.updateContact(this.state);
-        this.context.dispatch({type: 'UPDATE_CONTACT', payload: this.state});
+        // this.context.dispatch({type: 'UPDATE_CONTACT', payload: this.state});
+        this.context.dispatch({type: 'UPDATE_CONTACT', payload: contact});
         this.props.history.push('/');
      }
 
-     componentWillReceiveProps(nextProps){
-         console.log(nextProps)
-         if(nextProps.contact.id !==this.state.id){
-             this.setState({
-                id: nextProps.contact.id,
-                firstName: nextProps.contact.firstName,
-                lastName: nextProps.contact.lastName,
-                email: nextProps.contact.email,
-                profession: nextProps.contact.profession,
-                selectedValue: nextProps.contact.selectedValue,
-                errors: {}
-             })
-         }
-     }
 
      handleChange = (e) => {
         this.setState({
