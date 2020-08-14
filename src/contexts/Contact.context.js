@@ -56,32 +56,7 @@ const reducer = (state, action) => {
 export class ContactProvider extends Component {
 
     state = {
-        contacts: [
-          {
-            id: 1,
-            firstName: 'Bipon',
-            lastName: 'Biswas',
-            email: 'bipon770@gmail.com',
-            profession: 'Web developer',
-            selectedValue: 'personal'
-          },
-          {
-            id: 2,
-            firstName: 'Sandip',
-            lastName: 'Rahman',
-            email: 'sr@gmail.com',
-            profession: 'Graphics Designer',
-            selectedValue: 'professional'
-          },
-          {
-            id: 3,
-            firstName: 'Sajib',
-            lastName: 'Hasan',
-            email: 'sajib@gmail.com',
-            profession: 'Php developer',
-            selectedValue: 'personal'
-          }
-        ],
+        contacts: [],
         selectedContact: null
       }
       
@@ -89,6 +64,9 @@ export class ContactProvider extends Component {
         const contacts =  await fetch('http://localhost:3000/contacts')
         .then(res => res.json())
         console.log(contacts)
+        this.setState({
+          contacts
+        })
       }
 
       dispatch = action => this.setState(state => reducer(state, action))
