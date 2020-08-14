@@ -84,6 +84,12 @@ export class ContactProvider extends Component {
         ],
         selectedContact: null
       }
+      
+      componentDidMount(){
+        fetch('http://localhost:3000/contacts').then(res => res.json()).then(
+          contacts => console.log(contacts)
+        )
+      }
 
       dispatch = action => this.setState(state => reducer(state, action))
 
