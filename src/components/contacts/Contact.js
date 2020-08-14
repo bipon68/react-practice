@@ -10,9 +10,13 @@ export default class Contact extends Component {
         toggleContact: false
       };
 
-      handleDelete = (id) => () => {
+      handleDelete = (id) => async() => {
         console.log(id)
+        await fetch(`http://localhost:3000/contacts/${id}`, {
+          method: 'DELETE'
+        })
         this.context.dispatch({type: 'DELETE_CONTACT', payload: id});
+        // this.context.dispatch({type: 'DELETE_CONTACT', payload: id});
         // this.context.deleteContact(id)
         // this.props.deleteContact(id)
       }

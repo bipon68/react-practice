@@ -1,7 +1,7 @@
 {
   "contacts": [
     {
-      "id": "NFdaxgp",
+      "id": 1,
       "firstName": "Mehdi",
       "lastName": "Hasan",
       "email": "hasanmehdi@gmail.com",
@@ -9,7 +9,7 @@
       "selectedValue": "professional"
     },
     {
-      "id": "77iXEFH",
+      "id": 2,
       "firstName": "John",
       "lastName": "Doe",
       "email": "johndoe@gmail.com",
@@ -32,15 +32,6 @@
       "lastName": "Ben",
       "email": "derek@gmail.com",
       "profession": "asdfasd",
-      "selectedValue": "professional",
-      "errors": {}
-    },
-    {
-      "id": "64ca91d5-ba85-4a87-86c7-d38df2e65006",
-      "firstName": "Simon",
-      "lastName": "Gomez",
-      "email": "simon@gmail.com",
-      "profession": "Full Stack",
       "selectedValue": "professional",
       "errors": {}
     }

@@ -151,7 +151,7 @@ import { ContactContext } from '../../contexts/Contact.context';
                             <span>Professional</span>
                         </label>
                     </p>
-                    <button class="btn waves-effect waves-light" type="submit">Submit</button>
+                    <button className="btn waves-effect waves-light" type="submit">Submit</button>
                 
                 </form>
             </React.Fragment>
