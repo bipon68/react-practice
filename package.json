@@ -23,6 +23,7 @@
   },
   "dependencies": {
     "axios": "^0.19.2",
+    "babel-polyfill": "^6.26.0",
     "concurrently": "^5.3.0",
     "json-server": "^0.16.1",
     "react": "^16.13.1",

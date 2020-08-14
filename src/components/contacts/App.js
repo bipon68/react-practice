@@ -1,5 +1,6 @@
 import React, {Component} from "react";
 import ReactDOM from "react-dom";
+import 'babel-polyfill';
 // import Example from './Example';
 // import Parent from './Parent';
 // import Friends from './Friends';
