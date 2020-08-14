@@ -12,7 +12,8 @@ export default class Contact extends Component {
 
       handleDelete = (id) => () => {
         console.log(id)
-        this.context.deleteContact(id)
+        this.context.dispatch({type: 'DELETE_CONTACT', payload: id});
+        // this.context.deleteContact(id)
         // this.props.deleteContact(id)
       }
       handleToggleContact = () => {
@@ -20,15 +21,17 @@ export default class Contact extends Component {
           toggleContact: !this.state.toggleContact
         })
       }
-      handleEdit = (id) => () => {
+      handleEdit = (contact) => () => {
         // console.log(id)
-        this.context.editContact(id)
+        this.context.dispatch({type: 'EDIT_CONTACT', payload : contact})
+        // this.context.editContact(id)
         // this.props.editContact(id);
       }
 
 
     render() {
-        const { id, firstName, lastName, email, profession } = this.props.contact;
+        // const { id, firstName, lastName, email, profession } = this.props.contact;
+        const { contact, contact: {id, firstName, lastName, email, profession} } = this.props
         return (
             
             <div className='card'>
@@ -44,7 +47,7 @@ export default class Contact extends Component {
                       <a href='#!' onClick={this.handleDelete(id)}>
                         <i className='material-icons right'>delete</i>
                       </a>
-                      <Link to={`/edit/${id}`} onClick={this.handleEdit(id)}>
+                      <Link to={`/edit/${id}`} onClick={this.handleEdit(contact)}>
                         <i className='material-icons right'>edit</i>
                       </Link>
                         </h6>

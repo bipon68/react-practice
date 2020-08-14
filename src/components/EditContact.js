@@ -49,7 +49,8 @@ import { ContactContext } from '../contexts/Contact.context';
             return;
           }
         // console.log(this.state)
-        this.context.updateContact(this.state);
+        // this.context.updateContact(this.state);
+        this.context.dispatch({type: 'UPDATE_CONTACT', payload: this.state});
         this.props.history.push('/');
      }
 

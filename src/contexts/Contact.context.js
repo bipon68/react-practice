@@ -22,6 +22,25 @@ const reducer = (state, action) => {
                 ...state,
                 contacts: [...state.contacts, action.payload]
             };
+        case 'DELETE_CONTACT': 
+          return{
+            ...state,
+            contacts: state.contacts.filter(contact => contact.id !== action.payload)
+        };
+        case 'EDIT_CONTACT':
+          return {
+            ...state,
+            selectedContact: action.payload
+          }
+        case 'UPDATE_CONTACT':
+            return {
+              ...state,
+              contacts: state.contacts.map(contact =>
+                contact.id === action.payload.id
+                  ? (contact = action.payload)
+                  : contact
+              )
+            };
         default: 
             return state;
     }
@@ -75,35 +94,35 @@ export class ContactProvider extends Component {
       //   })
       //   console.log(contact)
       // }
-      deleteContact = (id) => {
-        const updatedContacts = this.state.contacts.filter(contact => contact.id !==id) 
-        this.setState({
-          contacts: updatedContacts
-        })
-      };
-      editContact = (id) => {
-        console.log(id)
-        const fountItem = this.state.contacts.find(contact => contact.id === id);
-        this.setState({
-          selectedContact: fountItem
-        })
-      }
+      // deleteContact = (id) => {
+      //   const updatedContacts = this.state.contacts.filter(contact => contact.id !==id) 
+      //   this.setState({
+      //     contacts: updatedContacts
+      //   })
+      // };
+      // editContact = (id) => {
+      //   console.log(id)
+      //   const fountItem = this.state.contacts.find(contact => contact.id === id);
+      //   this.setState({
+      //     selectedContact: fountItem
+      //   })
+      // }
     
      
-          updateContact = updateContact => {
-            const updatedContacts = this.state.contacts.map(contact =>
-                    // if(contact.id === updateContact.id){
-                  //   contact = updateContact
-                  // }else{
-                  //   return contact
-                  // }
-              contact.id === updateContact.id ? (contact = updateContact) : contact
-            );
-            this.setState({
-              contacts: updatedContacts,
-              selectedContact: null
-            });
-          };
+      // updateContact = updateContact => {
+      //   const updatedContacts = this.state.contacts.map(contact =>
+      //           // if(contact.id === updateContact.id){
+      //         //   contact = updateContact
+      //         // }else{
+      //         //   return contact
+      //         // }
+      //     contact.id === updateContact.id ? (contact = updateContact) : contact
+      //   );
+      //   this.setState({
+      //     contacts: updatedContacts,
+      //     selectedContact: null
+      //   });
+      // };
 
 
     render(){
@@ -111,9 +130,9 @@ export class ContactProvider extends Component {
             <ContactContext.Provider value={{
                 state: this.state,
                 //addContact: this.addContact,
-                editContact: this.editContact,
-                updateContact: this.updateContact,
-                deleteContact: this.deleteContact,
+                // editContact: this.editContact,
+                // updateContact: this.updateContact,
+                // deleteContact: this.deleteContact,
                 dispatch: this.dispatch
                 // firstName: 'Bipon',
                 // lastName: 'Biswas'
