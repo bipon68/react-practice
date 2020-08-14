@@ -6,7 +6,9 @@
   "author": "bipon68 <bipon68@users.noreply.github.com>",
   "license": "MIT",
   "scripts": {
-    "start": "parcel index.html --open",
+    "dev:server": "yarn --prefix server json-server --watch ./server/db.json",
+    "dev:client": "parcel index.html --open",
+    "start": " concurrently \"yarn dev:server\" \"yarn dev:client\"",
     "format": "prettier --write \"src/**/*.{js,jsx}\"",
     "lint": "eslint \"src/**/*.{js,jsx}\""
   },
@@ -20,6 +22,8 @@
     "prettier": "^2.0.5"
   },
   "dependencies": {
+    "concurrently": "^5.3.0",
+    "json-server": "^0.16.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-router-dom": "^5.2.0",

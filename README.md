@@ -12,6 +12,10 @@
 - move script file into src folder - `"format": "prettier --write \"src/app.js\""`
 - `"format": "prettier --write \"src/**/*.{js, jsx}\""`
 - `yarn start`
+- `yarn add json-server` for running from main project
+- `"start": " concurrently \"yarn dev:server\" \"yarn dev:client\"",` for client and server running
+- `yarn add concurrently` help for two command running
+- if want to port fixed `"dev:server": "yarn --prefix server json-server --watch ./server/db.json -p 8001",`
 
 ## json server creation
 - json server ref : https://github.com/typicode/json-server
@@ -23,6 +27,8 @@
     "dev:server": "json-server --watch db.json"
   },`
   - then for run command: `yarn dev:server`
+  - add client `package.json` file `"dev:server": "yarn --prefix server json-server --watch ./server/db.json",`
+  - also update `package.json` file `"dev:client": "parcel index.html --open",`
 
 ### Eslint configure 
 
