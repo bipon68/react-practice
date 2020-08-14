@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import validator from 'validator';
-import { ContactContext } from '../contexts/Contact.context';
+import { ContactContext } from '../../contexts/Contact.context';
 
  class EditContact extends Component {
     static contextType = ContactContext;

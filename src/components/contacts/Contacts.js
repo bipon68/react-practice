@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 // import SearchInput from './SearchInput';
 import Contact from './Contact';
-import { ContactContext } from '../contexts/Contact.context';
+import { ContactContext } from '../../contexts/Contact.context';
 
  class Contacts extends Component {
 

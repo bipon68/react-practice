@@ -3,21 +3,21 @@ import ReactDOM from "react-dom";
 // import Example from './Example';
 // import Parent from './Parent';
 // import Friends from './Friends';
-import Header from "./Header";
+import Header from "../layout/Header";
 import Contacts from "./Contacts";
 import AddContact from "./AddContact";
 import EditContact from './EditContact';
-import './style.css';
-import About from './About';
-import NotFound from './NotFound';
+import '../styles/style.css';
+import About from '../pages/About';
+import NotFound from '../pages/NotFound';
 
 import { Route, Redirect, Switch } from 'react-router-dom';
 
-import Counter from "./Counter";
+import Counter from "../Counter";
 
 console.log("React : ", React);
 console.log("ReactDOM : ", ReactDOM);
-import { ContactContext } from '../contexts/Contact.context';
+import { ContactContext } from '../../contexts/Contact.context';
 
 //Typechecking With PropTypes - https://reactjs.org/docs/typechecking-with-proptypes.html
 

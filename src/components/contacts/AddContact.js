@@ -5,7 +5,7 @@ import validator from 'validator';
 // 
 // const { v4: uuidV4 } = require('uuid');
 import { uuid } from 'uuidv4';
-import { ContactContext } from '../contexts/Contact.context';
+import { ContactContext } from '../../contexts/Contact.context';
 
 
 

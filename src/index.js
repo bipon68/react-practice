@@ -1,7 +1,7 @@
 
 import React, {Component} from "react";
 import ReactDOM from "react-dom";
-import App from './components/App';
+import App from './components/contacts/App';
 
 // using ES6 modules
 import { BrowserRouter, Route, Link } from "react-router-dom";

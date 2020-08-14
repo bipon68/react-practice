@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import { ContactContext } from '../contexts/Contact.context';
+import { ContactContext } from '../../contexts/Contact.context';
 
 export default class Contact extends Component {
 
