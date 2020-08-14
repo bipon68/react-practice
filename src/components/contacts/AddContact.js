@@ -20,7 +20,7 @@ import { ContactContext } from '../../contexts/Contact.context';
          selectedValue: 'personal',
          errors: {}
      }
-     handleSubmit = (e) => {
+     handleSubmit = async (e) => {
         e.preventDefault();
         if(this.state.firstName === '' || !validator.isLength(this.state.firstName, {min: 3})){
             this.setState({
@@ -54,10 +54,22 @@ import { ContactContext } from '../../contexts/Contact.context';
             });
             return;
           }
+             // posting data to server
+       const contact = await fetch('http://localhost:3000/contacts', {
+            method: 'POST',
+            headers: {
+            'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(this.state)
+        }).then(res => res.json())
+
         // console.log(this.state)
         // this.context.addContact(this.state);
-        this.context.dispatch({type: 'ADD_CONTACT', payload: this.state});
+        // this.context.dispatch({type: 'ADD_CONTACT', payload: this.state});
+        this.context.dispatch({type: 'ADD_CONTACT', payload: contact});
         this.props.history.push('/');
+
+     
 
      }
      handleChange = (e) => {
@@ -65,6 +77,8 @@ import { ContactContext } from '../../contexts/Contact.context';
             [e.target.name]: e.target.value
         })
      }
+
+
      
 
     render() {
@@ -146,7 +160,7 @@ import { ContactContext } from '../../contexts/Contact.context';
                             <span>Professional</span>
                         </label>
                     </p>
-                    <button class="btn waves-effect waves-light" type="submit">Submit</button>
+                    <button className="btn waves-effect waves-light" type="submit">Submit</button>
                 
                 </form>
             </React.Fragment>
