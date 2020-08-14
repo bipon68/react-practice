@@ -13,6 +13,17 @@
 - `"format": "prettier --write \"src/**/*.{js, jsx}\""`
 - `yarn start`
 
+## json server creation
+- json server ref : https://github.com/typicode/json-server
+- create a server folder
+- `yarn init -y` then generate a `package.json` file
+- `yarn add json-server`
+- `json-server --watch db.json`
+- add script into `package.json` file `"scripts": {
+    "dev:server": "json-server --watch db.json"
+  },`
+  - then for run command: `yarn dev:server`
+
 ### Eslint configure 
 
 - `yarn add eslint -D`

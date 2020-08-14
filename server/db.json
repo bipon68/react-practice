@@ -1,0 +1,28 @@
+{
+  "contacts": [
+    {
+      "firstName": "Mehdi",
+      "lastName": "Hasan",
+      "email": "hasanmehdi@gmail.com",
+      "profession": "Android developer",
+      "selectedValue": "professional",
+      "id": "NFdaxgp"
+    },
+    {
+      "firstName": "John",
+      "lastName": "Doe",
+      "email": "johndoe@gmail.com",
+      "profession": "Front End Developer",
+      "selectedValue": "professional",
+      "id": "77iXEFH"
+    },
+    {
+      "firstName": "Mahfuz",
+      "lastName": "Shazol",
+      "email": "mahfuz@gmail.com",
+      "profession": "BackEnd Developer",
+      "selectedValue": "professional",
+      "id": "77iXEFH"
+    }
+  ]
+}
